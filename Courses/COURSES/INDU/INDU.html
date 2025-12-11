@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>مهندسی صنایع</title>
+
+  <link rel="stylesheet" href="INDU.css" />
+</head>
+<body>
+  <header class="page-header" role="banner">
+    <div class="container header-inner">
+      <h1 id="deptTitle" class="dept-title">مهندسی صنایع</h1>
+
+      <div class="search-wrap" role="search" aria-haspopup="listbox" aria-owns="searchResults">
+        <label for="pageSearch" class="visually-hidden">جستجو در دروس و اساتید و ترم‌ها</label>
+        <input id="pageSearch" type="search" class="search-input" placeholder="جستجو در دروس، اساتید یا ترم…" aria-autocomplete="list" aria-controls="searchResults" autocomplete="off" />
+        <div id="searchResults" class="search-results" role="listbox" aria-label="نتایج جستجو" hidden></div>
+      </div>
+    </div>
+  </header>
+
+  <main class="page-main">
+    <section class="selectors" aria-labelledby="selectorsTitle">
+      <h2 id="selectorsTitle" class="visually-hidden">انتخاب ترم و درس</h2>
+
+      <label class="field">
+        <span class="field-label">ترم</span>
+        <select id="termSelect" aria-label="انتخاب ترم" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+          <option value="">انتخاب ترم</option>
+          <!-- options 1..8 -->
+          <option value="1">ترم ۱</option>
+          <option value="2">ترم ۲</option>
+          <option value="3">ترم ۳</option>
+          <option value="4">ترم ۴</option>
+          <option value="5">ترم ۵</option>
+          <option value="6">ترم ۶</option>
+          <option value="7">ترم ۷</option>
+          <option value="8">ترم ۸</option>
+        </select>
+      </label>
+
+      <label class="field">
+        <span class="field-label">درس</span>
+        <select id="lessonSelect" aria-label="انتخاب درس" disabled style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+          <option value="">انتخاب درس</option>
+          <option value="درس1">درس1</option>
+          <option value="درس2">درس2</option>
+          <option value="درس3">درس3</option>
+        </select>
+      </label>
+    </section>
+
+    <section class="results" aria-live="polite" aria-atomic="true">
+      <h2 class="results-title">نتایج</h2>
+
+      <div id="cardsContainer" class="cards-container" aria-live="polite">
+        <!-- جا برای کارت‌ها: توسط JS پر می‌شود -->
+      </div>
+    </section>
+  </main>
+
+  <script src="INDU.js" defer></script>
+</body>
+</html>

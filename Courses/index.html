@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>دانشیار</title>
+  <meta name="description" content="دانشیار — پلتفرم آموزشی" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <!-- Header -->
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+
+      <!--  menu button  -->
+      <button id="mobileMenuBtn" class="mobile-menu-btn" aria-label="باز کردن منو" aria-controls="mobileDrawer" aria-expanded="false">
+        <span class="icon">☰</span>
+      </button>
+
+      <!-- logo -->
+      <a class="logo" href="#" aria-label="صفحه اصلی دانشیار">دانشیار</a>
+
+      <!-- search -->
+      <div class="search-wrap" role="search">
+        <label for="searchInput" class="visually-hidden" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">جستجو</label>
+        <input id="searchInput" class="search-input" type="search" placeholder="جستجو" aria-autocomplete="list" aria-controls="searchResults" />
+        <div id="searchResults" class="search-results" role="listbox" aria-live="polite" hidden></div>
+      </div>
+
+      <!-- main nav -->
+      <nav class="main-nav" aria-label="منوی اصلی">
+        <a href="#categories">دوره‌ها</a>
+        <a href="#paths">ذخیره‌شده‌</a>
+        <a href="#blog">بلاگ</a>
+      </nav>
+
+
+      <!--auth desktop -->
+      <button id="btnAuthDesktop" class="btn btn-outline desktop-auth-btn" aria-haspopup="dialog" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">ورود / ثبت‌نام</button>
+
+
+
+      <!-- auth mobile-->
+      <button id="btnAuthMobile" class="btn btn-outline mobile-auth-btn" aria-haspopup="dialog" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">ورود / ثبت‌نام</button>
+
+    </div>
+  </header>
+
+  <!--mobile drawer -->
+  <nav id="mobileDrawer" class="mobile-drawer" aria-hidden="true" aria-label="منوی موبایل">
+    <div class="drawer-backdrop" data-close></div>
+    <div class="drawer-panel" role="dialog" aria-modal="true" aria-labelledby="drawerTitle">
+      <div class="drawer-header">
+        <h2 id="drawerTitle">منو</h2>
+        <button id="drawerClose" class="drawer-close" aria-label="بستن منو">✕</button>
+      </div>
+
+<div class="drawer-content">
+
+  <button class="drawer-link drawer-toggle" 
+          data-target="#coursesSubmenu"
+          style="font-weight:700; font-family:'Segoe UI', Tahoma;">
+    دانشکده ها و دروس
+  </button>
+
+  <div id="coursesSubmenu" class="drawer-submenu">
+    <a href="COURSES/omomi/omomi.html" class="drawer-sublink">عمومی ها</a>
+    <a href="COURSES/COMP/COMP.html" class="drawer-sublink">مهندسی کامپیوتر</a>
+    <a href="COURSES/ELEC/ELEC.html" class="drawer-sublink">مهندسی برق</a>
+    <a href="COURSES/BioMedical/BIO.html" class="drawer-sublink">مهندسی پزشکی</a>
+    <a href="COURSES/MECH/MECH.html" class="drawer-sublink">مهندسی مکانیک</a>
+    <a href="COURSES/INDU/INDU.html" class="drawer-sublink">مهندسی صنایع</a>
+    <a href="COURSES/TEXTILE/TEXTILE.html" class="drawer-sublink">مهندسی نساجی</a>
+    <a href="COURSES/CHEM/CHEM.html" class="drawer-sublink">مهندسی شیمی</a>
+    <a href="COURSES/POLYMER/POLYMER.html" class="drawer-sublink">مهندسی پلیمر و رنگ</a>
+    <a href="COURSES/HAVA/HAVA.html" class="drawer-sublink">مهندسی هوا فضا</a>
+    <a href="COURSES/OMRAN/OMRAN.html" class="drawer-sublink">مهندسی عمران و محیط زیست</a>
+    <a href="COURSES/ENERGY/ENERGY.html" class="drawer-sublink">مهندسی انرژی</a>
+    <a href="COURSES/MADAN/MADAN.html" class="drawer-sublink">مهندسی معدن</a>
+    <a href="COURSES/MAVAD/MAVAD.html" class="drawer-sublink">مهندسی مواد و متالورژی</a>
+    <a href="COURSES/DARYA/DARYA.html" class="drawer-sublink">مهندسی دریا</a>
+    <a href="COURSES/MATH_PHS/MATH_PHS.html" class="drawer-sublink">ریاضی و فیزیک</a>
+  </div>
+
+  <a href="#paths" class="drawer-link">ذخیره شده ها</a>
+  <a href="#blog" class="drawer-link">بلاگ</a>
+
+</div>
+
+    </div>
+  </nav>
+
+  <!--auth modal-->
+  <div id="authModal" class="modal" aria-hidden="true" role="dialog" aria-labelledby="authTitle" aria-modal="true">
+    <div class="modal-backdrop" data-close></div>
+    <div class="modal-panel" role="document">
+      <button class="modal-close" data-close aria-label="بستن">&times;</button>
+      <h3 id="authTitle">ورود یا ثبت‌نام</h3>
+      <form id="authForm" class="auth-form" autocomplete="on">
+        <label for="email">ایمیل</label>
+        <input id="email" name="email" type="email" required />
+        <label for="password">رمز عبور</label>
+        <input id="password" name="password" type="password" required minlength="6" />
+        <div class="auth-actions">
+          <button type="submit" class="btn btn-primary" style="font-family: Tahoma, Geneva, Verdana, sans-serif;">ورود</button>
+          <button type="button" id="switchToRegister" class="btn btn-ghost" style="font-family: Tahoma, Geneva, Verdana, sans-serif;">ثبت‌نام</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+
+
+
+<main>
+<!-- Slider -->  
+<section class="slider" dir="rtl">
+  <div class="slides">
+
+    <a href="page1.html" class="slide active">
+      <img src="assets/images/slide1.jpg" alt="slide 1">
+    </a>
+
+    <a href="page2.html" class="slide">
+      <img src="assets/images/slide2.jpg" alt="slide 2">
+    </a>
+
+    <a href="page3.html" class="slide">
+      <img src="assets/images/slide3.jpg" alt="slide 3">
+    </a>
+
+  </div>
+
+  <!--buttons for prev and next-->
+<div class="slider-controls">
+  <button class="control prev">❮</button>
+  <button class="control next">❯</button>
+</div>
+
+
+  <!--slider dots -->
+  <div class="dots">
+    <span class="dot active" data-index="0"></span>
+    <span class="dot" data-index="1"></span>
+    <span class="dot" data-index="2"></span>
+  </div>
+</section>
+
+
+<!--category section-->
+<section class="category-section" dir="rtl">
+
+  <div class="section-title">
+    <span class="line"></span>
+    <h2 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">دسته‌بندی های منتخب</h2>
+  </div>
+
+  <div class="categories" id="categories">
+
+    <a href="COURSES/omomi/omomi.html" class="cat-box">
+      <img src="assets/images/uni_logo.png" alt="عمومی">
+      <p>عمومی ها</p>
+    </a>
+
+    <a href="COURSES/COMP/COMP.html" class="cat-box">
+      <img src="assets/images/comp.png" alt="مهندسی کامپیوتر">
+      <p>مهندسی کامپیوتر</p>
+    </a>
+
+    <a href="COURSES/ELEC/ELEC.html" class="cat-box">
+      <img src="assets/images/elec_logo.jpg" alt="مهندسی برق">
+      <p>مهندسی برق</p>
+    </a>
+
+    <a href="COURSES/BioMedical/BIO.html" class="cat-box">
+      <img src="assets/images/bio_logo.png" alt="مهندسی پزشکی">
+      <p>مهندسی پزشکی</p>
+    </a>
+
+    <a href="COURSES/MECH/MECH.html" class="cat-box">
+      <img src="assets/images/mech_logo.png" alt="مهندسی مکانیک">
+      <p>مهندسی مکانیک</p>
+    </a>
+
+    <a href="COURSES/INDU/INDU.html" class="cat-box">
+      <img src="assets/images/indu_logo.png" alt="مهندسی صنایع">
+      <p>مهندسی صنایع</p>
+    </a>
+
+    <a href="COURSES/TEXTILE/TEXTILE.html" class="cat-box">
+      <img src="assets/images/nasaji_logo.png" alt="مهندسی نساجی">
+      <p>مهندسی نساجی</p>
+    </a>
+
+    <a href="COURSES/CHEM/CHEM.html" class="cat-box">
+      <img src="assets/images/chem_logo.png" alt="مهندسی شیمی">
+      <p>مهندسی شیمی</p>
+    </a>
+
+    <a href="COURSES/POLYMER/POLYMER.html" class="cat-box">
+      <img src="assets/images/poly_logo.png" alt="مهندسی پلیمر و رنگ">
+      <p>مهندسی پلیمر و رنگ</p>
+    </a>
+
+    <a href="COURSES/HAVA/HAVA.html" class="cat-box">
+      <img src="assets/images/hava_logo.png" alt="مهندسی هوافضا">
+      <p>مهندسی هوافضا</p>
+    </a>
+
+    <a href="COURSES/OMRAN/OMRAN.html" class="cat-box">
+      <img src="assets/images/omran_logo.jpg" alt="مهندسی عمران و محیط زیست">
+      <p>مهندسی عمران ‌و‌ محیط‌ زیست</p>
+    </a>
+
+    <a href="COURSES/ENERGY/ENERGY.html" class="cat-box">
+      <img src="assets/images/energy_logo.png" alt="مهندسی انرژی">
+      <p>مهندسی انرژی</p>
+    </a>
+
+    <a href="COURSES/MADAN/MADAN.html" class="cat-box">
+      <img src="assets/images/madan_logo.png" alt="مهندسی معدن">
+      <p>مهندسی معدن</p>
+    </a>
+
+    <a href="COURSES/MAVAD/MAVAD.html" class="cat-box">
+      <img src="assets/images/mavad_logo.png" alt="مهندسی مواد و متالورژی">
+      <p>مهندسی مواد و متالورژی</p>
+    </a>
+
+    <a href="COURSES/DARYA/DARYA.html" class="cat-box">
+      <img src="assets/images/darya_logo.png" alt="مهندسی دریا">
+      <p>مهندس دریا</p>
+    </a>
+
+    <a href="COURSES/MATH_PHS/MATH_PHS.html" class="cat-box">
+      <img src="assets/images/math_logo.png" alt="ریاضی و فیزیک">
+      <p>ریاضی و فیزیک</p>
+    </a>
+
+  </div>
+</section>
+
+
+
+
+</main>
+
+
+  <script src="js/app.js" defer></script>
+</body>
+</html>
